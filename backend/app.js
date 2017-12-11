@@ -2,7 +2,6 @@ const express = require("express");
 const graphQLHTTP = require("express-graphql");
 const { GraphQLSchema } = require("graphql");
 
-const Post = require("./src/types/Post");
 const Query = require("./src/types/Query");
 const Mutation = require("./src/types/Mutation");
 
@@ -21,5 +20,5 @@ app.use(
     })
 );
 
-app.listen(5000);
-console.log("Server started on port 5000");
+app.listen(5005);
+console.log("Server started on port 5005");
