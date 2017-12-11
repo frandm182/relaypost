@@ -2,28 +2,13 @@ import React from 'react';
 import Post from "./Post";
 import { Link } from "react-router-dom";
 
-const mockPostData = [
-    {
-        node: {
-            __id: "1",
-            title: "First post",
-            content: "First post content"
-        }
-    },
-    {
-         node: {
-            __id: "2",
-            title: "Second post",
-            content: "Second post content"
-        }
-    }
-];
+import { createFragmentContainer, graphql } from 'react-relay'
 
 const ListPage = () => 
     <div style={styles.listPageWrapper}>
         <Link style={styles.postButtonWrapper} to="/create-post">+ New Post</Link>
         <div style={{ marginTop: 20 }}>
-            {mockPostData.map(({ node }) => (
+            {this.props.viewer.allPosts.edges.map(({ node }) => (
                 <Post key={node.__id} post={node} />
             ))}
         </div>
@@ -42,4 +27,18 @@ const styles = {
     }
 }
 
-export default ListPage;
+export default createFragmentContainer(
+    ListPage,
+    graphql `
+        fragment ListPage_viewer on Viewer {
+            allPosts(last: 100)
+            @connection(key: "ListPage_allPosts", filters: []) {
+                edges {
+                    node {
+                        ...Post_post
+                    }
+                }
+            }
+        }
+    `
+);
