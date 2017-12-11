@@ -1,5 +1,6 @@
 import React from 'react';
 import Post from "./Post";
+import { Link } from "react-router-dom";
 
 const mockPostData = [
     {
@@ -20,7 +21,7 @@ const mockPostData = [
 
 const ListPage = () => 
     <div style={styles.listPageWrapper}>
-        <div style={styles.postButtonWrapper}>+ New Post</div>
+        <Link style={styles.postButtonWrapper} to="/create-post">+ New Post</Link>
         <div style={{ marginTop: 20 }}>
             {mockPostData.map(({ node }) => (
                 <Post key={node.__id} post={node} />
