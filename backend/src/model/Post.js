@@ -13,7 +13,7 @@ const postSchema = new Schema({
 var PostModel = mongoose.model("Post", postSchema);
 
 module.exports = {
-    getPost: () => {
+    getPosts: () => {
         return PostModel.find();
     },
     getPost: id => {
