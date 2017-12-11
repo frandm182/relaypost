@@ -3,11 +3,11 @@ const graphQLHTTP = require("express-graphql");
 const { GraphQLSchema } = require("graphql");
 
 const Query = require("./src/types/Query");
-const Mutation = require("./src/types/Mutation");
+//const Mutation = require("./src/types/Mutation");
 
 const schema = new GraphQLSchema({
     query: Query,
-    mutation: Mutation
+    //mutation: Mutation
 });
 
 let app = express();

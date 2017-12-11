@@ -168,6 +168,10 @@ fresh@0.5.2:
   version "0.5.2"
   resolved "http://intersinopia:4873/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
 
+graphql-relay@^0.5.4:
+  version "0.5.4"
+  resolved "http://intersinopia:4873/graphql-relay/-/graphql-relay-0.5.4.tgz#58050cfe16118595f82ab3aabfc974546ce755a8"
+
 graphql@^0.11.7:
   version "0.11.7"
   resolved "http://intersinopia:4873/graphql/-/graphql-0.11.7.tgz#e5abaa9cb7b7cccb84e9f0836bf4370d268750c6"
